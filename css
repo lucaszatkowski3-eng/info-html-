@@ -1,0 +1,135 @@
+body{
+    margin:0;
+    padding:30px;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(
+        -45deg,
+        #dbeafe,
+        #f3e8ff,
+        #dcfce7,
+        #fef3c7
+    );
+    background-size:400% 400%;
+    animation:bgMove 15s ease infinite;
+    min-height:100vh;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    text-align:center;
+    color:#1f2937;
+}
+
+p{
+    text-align:center;
+    color:#4b5563;
+}
+
+/* Stammbaum */
+
+.tree{
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
+}
+
+.tree ul{
+    padding-top:20px;
+    position:relative;
+    transition:all .5s;
+}
+
+.tree li{
+    float:left;
+    text-align:center;
+    list-style:none;
+    position:relative;
+    padding:20px 8px 0 8px;
+}
+
+/* Verbindungslinien */
+
+.tree li::before,
+.tree li::after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:50%;
+    border-top:2px solid #666;
+    width:50%;
+    height:20px;
+}
+
+.tree li::after{
+    right:auto;
+    left:50%;
+    border-left:2px solid #666;
+}
+
+.tree li:only-child::before,
+.tree li:only-child::after{
+    display:none;
+}
+
+.tree li:first-child::before{
+    border:none;
+}
+
+.tree li:last-child::after{
+    border:none;
+}
+
+.tree ul ul::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:50%;
+    border-left:2px solid #666;
+    width:0;
+    height:20px;
+}
+
+/* Personenkästen */
+
+.person{
+    display:inline-block;
+    min-width:160px;
+    padding:15px;
+
+    border-radius:15px;
+
+    color:white;
+    font-weight:bold;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    transition:all .3s ease;
+
+    animation:fadeIn .8s ease;
+}
+
+.person:hover{
+    transform:translateY(-6px) scale(1.05);
+}
+
+/* Farben */
+
+.vorfahren{
+    background:#7c3aed;
+}
+
+.szatkowski{
+    background:#2563eb;
+}
+
+.partner{
+    background:#16a34a;
+}
+
+.kind{
+    background
